@@ -28,4 +28,29 @@ public class PaymentsManager
     {
         return _paymentsDbContext.Transactions.Where(x => x.UserId == userId).ToArray();
     }
+
+    /// <summary>
+    /// Метод для добавления пользователя в базу
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns></returns>
+    public async Task<User> CreateUser(User user)
+    {
+        _paymentsDbContext.Users.Add(user);
+        await _paymentsDbContext.SaveChangesAsync();
+        return user;
+    }
+
+    /// <summary>
+    /// Метод для добавления трансакции
+    /// </summary>
+    /// <param name="transaction"></param>
+    /// <returns></returns>
+    public async Task<Transaction> CreateTransaction(Transaction transaction)
+    {
+        _paymentsDbContext.Transactions.Add(transaction);
+        await _paymentsDbContext.SaveChangesAsync();
+        return transaction;
+
+    }
 }
