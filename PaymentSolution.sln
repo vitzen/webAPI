@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Model", "Payments.Model\Payments.Model.csproj", "{FF093ADF-F145-4998-BE14-D9D7980552E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Db", "Payments.Db\Payments.Db.csproj", "{191063F2-40FA-4FA5-B1A3-F9C1EA977D03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF093ADF-F145-4998-BE14-D9D7980552E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF093ADF-F145-4998-BE14-D9D7980552E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF093ADF-F145-4998-BE14-D9D7980552E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF093ADF-F145-4998-BE14-D9D7980552E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191063F2-40FA-4FA5-B1A3-F9C1EA977D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191063F2-40FA-4FA5-B1A3-F9C1EA977D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191063F2-40FA-4FA5-B1A3-F9C1EA977D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191063F2-40FA-4FA5-B1A3-F9C1EA977D03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
