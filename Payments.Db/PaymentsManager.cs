@@ -51,6 +51,5 @@ public class PaymentsManager
         _paymentsDbContext.Transactions.Add(transaction);
         await _paymentsDbContext.SaveChangesAsync();
         return transaction;
-
     }
 }
