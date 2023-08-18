@@ -10,10 +10,9 @@ public class PaymentsController : ControllerBase
 {
     private readonly PaymentsManager _paymentsManager;
 
-    public PaymentsController()
+    public PaymentsController(PaymentsManager paymentsManager)
     {
-        var dbcontext = new PaymentsDbContext();
-        _paymentsManager = new PaymentsManager(dbcontext);
+        _paymentsManager = paymentsManager;
     }
 
     [HttpGet]
@@ -29,4 +28,4 @@ public class PaymentsController : ControllerBase
     {
         return Ok(await _paymentsManager.CreateUser(user));
     }
-} 
+}

@@ -6,5 +6,11 @@ public class User
     public string Name { get; set; }
     public UserInfo Info { get; set; }
 
-    public List<Transaction> TransactionsList { get; set; }
+    public List<Transaction>? TransactionsList { get; set; }
+
+    public override string ToString()
+    {
+        return $"Id: {Id}, Name: {Name}, Info: {Info}";
+    }
 }
+
