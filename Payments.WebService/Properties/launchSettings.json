@@ -13,18 +13,8 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "payments/getUsers",
+      "launchUrl": "users/getUsers/",
       "applicationUrl": "http://localhost:5194",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "https": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "payments/getUsers",
-      "applicationUrl": "https://localhost:7186;http://localhost:5194",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -32,7 +22,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "payments/getUsers",
+      "launchUrl": "users/getUsers/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

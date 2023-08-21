@@ -4,7 +4,7 @@ using Payments.Model.Models;
 
 namespace Payments.WebService.Controllers;
 
-[Route("[controller]")]
+[Route("/users")]
 [ApiController]
 public class UsersController : ControllerBase
 {
@@ -15,8 +15,8 @@ public class UsersController : ControllerBase
         _paymentsManager = paymentsManager;
     }
 
-    [HttpGet]
-    [Route("getUsers")]
+    [HttpGet("/getUsers")]
+    //[Route("/getUsers")]
     public ActionResult<User[]> GetUsers()
     {
         return Ok(_paymentsManager.GetUsers());
@@ -28,4 +28,4 @@ public class UsersController : ControllerBase
     {
         return Ok(await _paymentsManager.CreateUser(user));
     }
-}
+} 
