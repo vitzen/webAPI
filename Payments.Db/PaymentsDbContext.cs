@@ -11,12 +11,6 @@ public class PaymentsDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
 
-    // public PaymentsDbContext()
-    // {
-    //     Database.EnsureDeleted();
-    //     Database.EnsureCreated();
-    // }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseNpgsql(ConnectionString);

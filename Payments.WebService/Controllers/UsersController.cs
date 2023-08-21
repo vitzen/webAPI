@@ -6,11 +6,11 @@ namespace Payments.WebService.Controllers;
 
 [Route("[controller]")]
 [ApiController]
-public class PaymentsController : ControllerBase
+public class UsersController : ControllerBase
 {
     private readonly PaymentsManager _paymentsManager;
 
-    public PaymentsController(PaymentsManager paymentsManager)
+    public UsersController(PaymentsManager paymentsManager)
     {
         _paymentsManager = paymentsManager;
     }
