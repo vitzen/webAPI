@@ -35,9 +35,9 @@ public class TransactionController : ControllerBase
     /// <returns></returns>
     [HttpPost]
     [Route("createTransaction")]
-    public async Task<ActionResult<Transaction>> CreateTransaction(Transaction transaction)
+    public async Task<ActionResult<Transaction>> CreateTransactionByUserId(int userId)
     {
-        transaction = await _paymentsManager.CreateTransaction(transaction);
+        var transaction = await _paymentsManager.CreateTransaction(userId);
         return Ok(transaction);
     }
 }

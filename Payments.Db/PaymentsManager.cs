@@ -46,8 +46,14 @@ public class PaymentsManager
     /// </summary>
     /// <param name="transaction"></param>
     /// <returns></returns>
-    public async Task<Transaction> CreateTransaction(Transaction transaction)
+    public async Task<Transaction> CreateTransaction(int userId)
     {
+        Transaction transaction = new Transaction()
+        {
+           UserId = userId,
+           CreatedDate = DateTime.UtcNow
+        };
+        
         _paymentsDbContext.Transactions.Add(transaction);
         await _paymentsDbContext.SaveChangesAsync();
         return transaction;
