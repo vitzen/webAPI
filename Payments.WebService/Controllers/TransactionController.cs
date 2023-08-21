@@ -22,7 +22,7 @@ public class TransactionController : ControllerBase
     /// <param name="userId"></param>
     /// <returns></returns>
     [HttpGet]
-    [Route("transactions/{userId}")]
+    [Route("{userId}")]
     public ActionResult<Transaction[]> GetTransactionByUserId(int userId)
     {
         return Ok(_paymentsManager.GetTransactionsByUserId(userId));
@@ -33,7 +33,7 @@ public class TransactionController : ControllerBase
     /// </summary>
     /// <param name="transaction"></param>
     /// <returns></returns>
-    [HttpGet]
+    [HttpPost]
     [Route("createTransactions")]
     public async Task<ActionResult<Transaction>> CreateTransaction(Transaction transaction)
     {
