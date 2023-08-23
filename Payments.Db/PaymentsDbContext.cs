@@ -13,7 +13,7 @@ public class PaymentsDbContext : DbContext
     
     public PaymentsDbContext()
     {
-        Database.EnsureDeleted();
+        //Database.EnsureDeleted();
         Database.EnsureCreated();
     }
 

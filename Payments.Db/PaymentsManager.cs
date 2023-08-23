@@ -34,10 +34,10 @@ public class PaymentsManager
     /// </summary>
     /// <param name="user"></param>
     /// <returns></returns>
-    public async Task<User> CreateUser(User user)
+    public User SaveUser(User user)
     {
         _paymentsDbContext.Users.Add(user);
-        await _paymentsDbContext.SaveChangesAsync();
+        _paymentsDbContext.SaveChangesAsync();
         return user;
     }
 
@@ -46,16 +46,39 @@ public class PaymentsManager
     /// </summary>
     /// <param name="transaction"></param>
     /// <returns></returns>
-    public async Task<Transaction> CreateTransaction(int userId)
+    public Transaction CreateTransaction(int userId)
     {
+        GetOrCreateUser(userId);
+        
         Transaction transaction = new Transaction()
         {
-           UserId = userId,
-           CreatedDate = DateTime.UtcNow
+            UserId = userId,
+            CreatedDate = DateTime.UtcNow
         };
-        
+
         _paymentsDbContext.Transactions.Add(transaction);
-        await _paymentsDbContext.SaveChangesAsync();
+        _paymentsDbContext.SaveChanges();
         return transaction;
+    }
+
+    public User GetUser(int userId)
+    {
+        return _paymentsDbContext.Users.FirstOrDefault(x => x.Id == userId);
+    }
+
+    public User GetOrCreateUser(int userId)
+    {
+        var user = GetUser(userId);
+        if (user == null)
+        {
+            user = new User()
+            {
+                Id = userId,
+                Name = "newUser " + DateTime.Now
+            };
+            SaveUser(user);
+        }
+
+        return user;
     }
 }
